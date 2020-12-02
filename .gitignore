@@ -1,0 +1,11 @@
+.DS_Store
+/node_modules/
+/src/node_modules/@sapper/
+yarn-error.log
+rollup.config.js
+START.md
+package.json
+/src/
+/static/
+/scripts/
+/__sapper__/
