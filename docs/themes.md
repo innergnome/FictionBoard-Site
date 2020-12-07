@@ -10,13 +10,13 @@ The HTML of objects in FictionBoard is purposly kept quite simple to improve acc
 
 A more complex object such as an actor sheet is written as a set of headers, list, key value pairs, text and links. To create a rendering of the object, FictionBoard splits texts into chunks. A chunk is represented by a div with class derived from object type and the header from which the chunk is created. The chunks are contained within a div with class according to type and theme.
 
-When using a handout you will recieve this code:
+### Example HTML
 
 ```
-<body class="system-{system-name}">
+<body class="system-{game-system} theme-{selected-theme}">
 
   <div class="handout-{type}">
-    <h1>Name of handout</h1>
+    <h2>Name of handout</h2>
     <div class="{type}-{chunk-name}">
       Content
     </div>
@@ -29,9 +29,17 @@ When using a handout you will recieve this code:
   </div>   
 
 ```
+ {game-system} - Derived from the system you are playing
+ {selected-theme} - Derived from theme setting. Fallback to default game system template if theme not set. 
+ {type} - Derived from the top level header or type property (Found in frontmatter). Can be overridden at the time of use (Change a diary note to a letter)
+ {chunk-name} - Derived from a secondary header
+
+### Example from Tales from the loop
+
+A handout of diary notes
 
 ```
-<body class="system-tales-from-the-loop">
+<body class="system-tftl theme-eighties">
 
   <div class="handout-diary">
     <h1>Letter found on pavement</h1>
@@ -49,7 +57,7 @@ I hav found tis old Hunting Cabin, and made it my
 bas. I try to make as litle nois as possible. Who knows 
 what els is out tere?</p>
     </div>
-    <div class="note-page">
+    <div class="diary-page">
       <h2>December 13</h2>
       <p>I curs my stupidity tat I didn’t tel anyone tat I chos 
 to hike up Read Mountain rater tan my usual pat. They 
@@ -61,7 +69,7 @@ streaming in trough te window. I don’t dare to light
 te oil lamp. I hav sen more creatures out tere among te 
 rocks.</p>
     </div>
-    <div class="note-page">
+    <div class="diary-page">
     <h2>December 14</h2>
       <p>The creatures hav become hungrier. I hav tried to hike 
 bot nort and sout, but was forced to turn back. In te 
