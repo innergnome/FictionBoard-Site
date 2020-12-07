@@ -34,7 +34,7 @@ A more complex object such as an actor sheet is written as a set of headers, lis
  {type} - Derived from the top level header or type property (Found in frontmatter). Can be overridden at the time of use (Change a diary note to a letter)
  {chunk-name} - Derived from a secondary header
 
-### Example from Tales from the loop
+### Full example from Tales from the loop
 
 A handout of diary notes
 
@@ -105,6 +105,7 @@ FictionBoard loads only enough CSS and HTML to show a specific variant of an obj
 
 The allowed {type} are the generic types. 
 
+```
 \themes
   \theme-noir
     colors.css
@@ -118,15 +119,18 @@ The allowed {type} are the generic types.
       logo.svg
       \fonts
       \images
+```
 
 ### System themes
 
 The allowed {type} are the generic types AND the system specific types
 
+```
 \system-themes
   \theme-{system}
     color.css
     ...
+```
 
 ## Using a custom theme
 
