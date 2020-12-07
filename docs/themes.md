@@ -1,9 +1,12 @@
 # Themes
 
-FictionBoard allows for custom theming of handouts, slide decks, actor sheets and other objects. 
+FictionBoard allows for custom theming of handouts, slide decks, actor sheets and other objects. Themes are written as CSS rules.
 
 Theming is highly encouraged to create an immersive experience relevant to your story. Themes can be generic and preferably genre oriented, game system specific or you can roll your own. The default theme for a system is usually maintained by someone appointed by the game system publisher.
-## Basic concepts
+## How styling works in FictionBoard
+
+By default, the look and feel of objects is retrieved from the game system. If the game system does not have any specific styling, genre styling is proposed. On game level you can choose to override genre or game specific styling with another theme. You can also at any time choose a different style for a object. 
+## Basic concepts for HTML in FictionBoard
 
 The HTML of objects in FictionBoard is purposly kept quite simple to improve accessibility and make them possible to express in written text.
 
@@ -11,15 +14,17 @@ A more complex object such as an actor sheet is written as a set of headers, lis
 
 ### Example text
 
-**Diary found in the trash bin** (H2)
+```Markdown
+
+## Diary found in the trash bin
 
 You find an old diary in the trash bin. Seems someone only started writing in it.
 
-**Page 1** (H3)
+### Page 1
  
 {Content}
 
-**Page 2** (H3)
+### Page 2
 
 {Content}
 
@@ -33,11 +38,11 @@ You find an old diary in the trash bin. Seems someone only started writing in it
     <h2>{handout-name}</h2>
     <div class="{type}-{chunk-name-as-slug}">
       <h3>{chunk-name}</h3>
-      Content
+      {Content}
     </div>
     <div class="{type}-{chunk-name-as-slug}">
       <h3>{chunk-name}</h3>
-      Content
+      {Content}
     </div>
   </div>   
 
@@ -49,9 +54,11 @@ You find an old diary in the trash bin. Seems someone only started writing in it
 - {type} - From the top level header or type property. Can be overridden at the time of use (Change a diary note to a letter)
 - {chunk-name} - From secondary headers
 - {chunk-name-slug} - From secondary headers, lowercase and with space replaced with underscore (\_)
+- {content} - All text following a chunk header. May contained formatting.
+
 ### Full example from Tales from the loop
 
-A handout of diary notes
+A handout of diary pages
 
 > This is a clean HTML version for styling purpose only. Other attributes are purposly left out.
 
@@ -116,9 +123,7 @@ one who did tis. Tomorow, I’l find a way home.</p>
 
 ### Classes and how to use them
 
-
-> TODO: Write specific instructions of how and where to do styling.
-
+> TODO: Write on best practice for how to use the classes in combination and with tags and pseudo classes.
 
 ## File and folder structure of a theme
 
@@ -155,6 +160,7 @@ The allowed {type} are the generic types AND the system specific types.
     slide.css
     actor.css
     ...
+  \system-{system-shortname}
 ```
 
 ### Custom themes
@@ -192,4 +198,4 @@ Font loading in FictionBoard is done with preloading so just referencing to them
 - Card decks
 - Tokens
 
-> TODO: Write documentation for each object type. 
+> TODO: Write documentation for each object type and the generic classes provided. 
