@@ -60,7 +60,7 @@ These modules are used by the VTT but work with limited functionalit independent
       
 ### Slide deck
 
-Renders a chunk or a document into a slide deck
+Renders a chunk or a document into a slide deck.
 
 ### Handout
 
@@ -70,13 +70,17 @@ Renders a chunk or a document into one or more handouts
 
 Renders on or more documents into a searchable tome
 
-### Character record
+### Character sheet
 
-Renders a chunk or a document into a character record
+Renders a chunk or a document into a character sheet
 
 ### Relations
 
 Renders the relations between a specific type of game entities from a chunk, document or collection of documents.
+
+### Avatars
+
+Used in the above objects in various sizes.
 
 
 ## Game entities
