@@ -6,7 +6,7 @@ FictionBoard is split into seperate modules. Some work independent of each other
 
 ### Board
 
-Is a container for threads, documents, slides and other high level modules.
+A container for threads, documents, folders and other high level modules.
 
 ### Threads
 
