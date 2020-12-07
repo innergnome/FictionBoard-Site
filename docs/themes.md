@@ -27,11 +27,11 @@ You find an old diary in the trash bin. Seems someone only started writing in it
 ### Page 2
 
 {Content}
-
+```
 
 ### Example HTML
 
-```
+```html
 <body class="system-{system-shortname} theme-{selected-theme}">
 
   <div class="handout-{type}">
@@ -62,7 +62,7 @@ A handout of diary pages
 
 > This is a clean HTML version for styling purpose only. Other attributes are purposly left out.
 
-```
+```html
 <body class="system-tftl theme-eighties">
 
   <div class="handout-diary">
