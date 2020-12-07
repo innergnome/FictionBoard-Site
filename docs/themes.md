@@ -2,49 +2,66 @@
 
 FictionBoard allows for custom theming of handouts, slide decks, actor sheets and other objects. 
 
-Theming is highly encouraged to create an immersive experience relevant to your story. Themes should be generic and preferably genre oriented or game system specific. 
-
+Theming is highly encouraged to create an immersive experience relevant to your story. Themes can be generic and preferably genre oriented, game system specific or you can roll your own. The default theme for a system is usually maintained by someone appointed by the game system publisher.
 ## Basic concepts
 
 The HTML of objects in FictionBoard is purposly kept quite simple to improve accessibility and make them possible to express in written text.
 
 A more complex object such as an actor sheet is written as a set of headers, list, key value pairs, text and links. To create a rendering of the object, FictionBoard splits texts into chunks. A chunk is represented by a div with class derived from object type and the header from which the chunk is created. The chunks are contained within a div with class according to type and theme.
 
+### Example text
+
+**Diary found in the trash bin** (H2)
+
+You find an old diary in the trash bin. Seems someone only started writing in it.
+
+**Page 1** (H3)
+ 
+{Content}
+
+**Page 2** (H3)
+
+{Content}
+
+
 ### Example HTML
 
 ```
-<body class="system-{game-system} theme-{selected-theme}">
+<body class="system-{system-shortname} theme-{selected-theme}">
 
   <div class="handout-{type}">
-    <h2>Name of handout</h2>
-    <div class="{type}-{chunk-name}">
+    <h2>{handout-name}</h2>
+    <div class="{type}-{chunk-name-as-slug}">
+      <h3>{chunk-name}</h3>
       Content
     </div>
-    <div class="{type}-{chunk-name}">
-      Content
-    </div>
-    <div class="{type}-{chunk-name}">
+    <div class="{type}-{chunk-name-as-slug}">
+      <h3>{chunk-name}</h3>
       Content
     </div>
   </div>   
 
 ```
- {game-system} - Derived from the system you are playing
- {selected-theme} - Derived from theme setting. Fallback to default game system template if theme not set. 
- {type} - Derived from the top level header or type property (Found in frontmatter). Can be overridden at the time of use (Change a diary note to a letter)
- {chunk-name} - Derived from a secondary header
+#### Variables explained
 
+- {system-shortname} - From the system you are playing
+- {selected-theme} - From theme setting. Fallback to default game system template if theme not set. 
+- {type} - From the top level header or type property. Can be overridden at the time of use (Change a diary note to a letter)
+- {chunk-name} - From secondary headers
+- {chunk-name-slug} - From secondary headers, lowercase and with space replaced with underscore (\_)
 ### Full example from Tales from the loop
 
 A handout of diary notes
+
+> This is a clean HTML version for styling purpose only. Other attributes are purposly left out.
 
 ```
 <body class="system-tftl theme-eighties">
 
   <div class="handout-diary">
-    <h1>Letter found on pavement</h1>
+    <h2>Letter found on pavement</h2>
     <div class="diary-page">
-      <h2>December 12</h2>
+      <h3>December 12</h3>
       <p>What has happened is unbelievable, yet it has happened. 
 I was chasd up te pat by a creature tat I could only 
 identify as a dinosaur from te Cretaceous Period. The per-
@@ -58,7 +75,7 @@ bas. I try to make as litle nois as possible. Who knows
 what els is out tere?</p>
     </div>
     <div class="diary-page">
-      <h2>December 13</h2>
+      <h3>December 13</h3>
       <p>I curs my stupidity tat I didn’t tel anyone tat I chos 
 to hike up Read Mountain rater tan my usual pat. They 
 must hav started to look for me by now, but how wil 
@@ -70,7 +87,7 @@ te oil lamp. I hav sen more creatures out tere among te
 rocks.</p>
     </div>
     <div class="diary-page">
-    <h2>December 14</h2>
+    <h3>December 14</h3>
       <p>The creatures hav become hungrier. I hav tried to hike 
 bot nort and sout, but was forced to turn back. In te 
 nort, I hav sen a hous wit smoke coming from te chim-
@@ -97,16 +114,22 @@ one who did tis. Tomorow, I’l find a way home.</p>
 
 ```
 
+### Classes and how to use them
+
+
+> TODO: Write specific instructions of how and where to do styling.
+
+
 ## File and folder structure of a theme
 
 FictionBoard loads only enough CSS and HTML to show a specific variant of an object so split diffferent object types into separate CSS files for best performance.
 
 ### Generic themes
 
-The allowed {type} are the generic types. 
+The allowed {type} are the generic types.
 
 ```
-\themes
+\generic-themes
   \theme-noir
     colors.css
     slide.css
@@ -123,12 +146,27 @@ The allowed {type} are the generic types.
 
 ### System themes
 
-The allowed {type} are the generic types AND the system specific types
+The allowed {type} are the generic types AND the system specific types.
 
 ```
 \system-themes
-  \theme-{system}
+  \theme-{system-shortname}
     color.css
+    slide.css
+    actor.css
+    ...
+```
+
+### Custom themes
+
+The allowed {type} are the generic types AND the system specific types.
+
+```
+\custom-themes
+  \theme-{name-of-your-choice}
+    color.css
+    slide.css
+    actor.css
     ...
 ```
 
