@@ -82,6 +82,9 @@ Renders the relations between a specific type of game entities from a chunk, doc
 
 Used in the above objects in various sizes.
 
+### Timeline
+
+Renders a timeline for a list of events
 
 ## Game entities
 
