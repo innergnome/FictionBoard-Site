@@ -46,7 +46,12 @@ The work on messaging has not started but we'll probably go with a combination o
 
 ### Styling
 
-Plain old CSS with some sneaky use of CSS variables and Svelte magic. For now. I'm working on moving this setup to a SASS a follow [BEM syntax](http://getbem.com/naming/)
+Goals: 
+- Clean and simple
+- Readable
+- Accessible for anyone skilled in CSS.
+
+For now I use plain old CSS with some sneaky use of CSS variables and Svelte magic. I'm working on moving this setup to a SASS a follow [BEM syntax](http://getbem.com/naming/). I don't really see the need for frameworks now that grids, flex, css variables and other niceness are at hand but will probably borrow some breakpoint, layout, typography and spacing syntax to make it recognizable and compatible. The HTML of FictionBoard is quite plain. 
 
 ### Graphics
 
