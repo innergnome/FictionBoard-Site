@@ -1,3 +1,4 @@
+> TODO: An overhaul of this text and write more specific about fonts, colors, backgrounds etc.
 # Themes
 
 FictionBoard allows for custom theming of handouts, slide decks, actor sheets and other objects. Themes are written as CSS rules.
