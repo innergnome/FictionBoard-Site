@@ -84,6 +84,7 @@ Renders the relations between a specific type of game entities from a chunk, doc
 
 Used in the above objects in various sizes.
 
+<<<<<<< HEAD
 ## Render modules
 
 These modules will render and add functionality to VTT modules. They should be specified as plugins in the definition for how a VTT module shall render within a specific game system.
@@ -102,6 +103,11 @@ May include the helper "use" or similar.
 ## Helper modules
 
 These modules add functionality
+=======
+### Timeline
+
+Renders a timeline for a list of events
+>>>>>>> 3e656dea70d520c65544c51c2e413c357bca7a86
 
 ### roll
 
