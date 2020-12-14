@@ -4,9 +4,13 @@ This is the draft specification for the API
 
 ## Actor
 
+Represents any type of actor
+
 `:id` the id of a document representing an entity
 
 `:chunk_id` the id of a chunk
+
+### Endpoints
 
 `/api/actor/:id` returns the full actor object with template settings and markdown
 
