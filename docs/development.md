@@ -20,27 +20,27 @@ FictionBoard is built on an arhitecture utilizing [Sveltes](https://github.com/s
 
 FictionBoard use [Marked](https://github.com/markedjs/marked) with home built extensions to support our Markdown extension [RPG Markdown](https://github.com/innergnome/rpg-markdown). Default values for a markdown document is set as YAML in the Frontmatter.
 
-- ´title´ The name of the page
-- ´slug´ The URL friendly version of the title
-- ´type´ Should be a game entity, a container for game entities or a generic 'document'
-- ´data´ contains values parsed from the markdown
-- ´defaults´ Values used in the text that may be overridden by ´data´
-- ´template´ Values related to rendering.
-- ´template.plugins´ List of plugins and which chunks they apply to. A ´\_plugin: value´ directly in a chunk lets you _override_ the template plugin. Allowed plugins are defined by template properties.
-- ´template.effects´ List of default template effects. A ´\_effect: value´ in a chunk _adds_ an effect to the chunk. Allowed effects are defined by template properties.
+- `title` The name of the page
+- `slug` The URL friendly version of the title
+- `type` Should be a game entity, a container for game entities or a generic 'document'
+- `data` contains values parsed from the markdown
+- `defaults` Values used in the text that may be overridden by `data`
+- `template` Values related to rendering.
+- `template.plugins` List of plugins and which chunks they apply to. A `\_plugin: value` directly in a chunk lets you _override_ the template plugin. Allowed plugins are defined by template properties.
+- `template.effects` List of default template effects. A `\_effect: value` in a chunk _adds_ an effect to the chunk. Allowed effects are defined by template properties.
 
-<!-- TODO: Write about ´template.actions´ -->
+<!-- TODO: Write about `template.actions` -->
 
 #### Template YAML
 
-´´´yaml
+```yaml
 template:
    name:
    effects: 
    plugins:
    actions:
    logo:
-´´´
+```
 
 A production ready version of FictionBoard will probably use [ReMark](https://github.com/remarkjs/remark)/[ReHype](https://github.com/rehypejs/rehype) and other packages from the [Unified collective](https://github.com/unifiedjs/collective)
 
