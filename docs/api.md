@@ -6,7 +6,7 @@ This is the draft specification for the API
 
 `:id` the id of a document representing an entity
 
-`:chunk_id` the id of a section. Sections within a chunk has a section_id that contains its parents.
+`:chunk_id` the id of a chunk
 
 `/api/actor/:id` returns the full actor object with template settings and markdown
 
