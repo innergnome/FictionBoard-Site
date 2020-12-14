@@ -12,6 +12,74 @@ The HTML of objects in FictionBoard is purposly kept quite simple to improve acc
 
 A more complex object such as an actor sheet is written as a set of headers, list, key value pairs, text and links. To create a rendering of the object, FictionBoard splits texts into chunks. A chunk is represented by a div with class derived from object type and the header from which the chunk is created. The chunks are contained within a div with class according to type and theme.
 
+The chunk rendering can be overridden by defining a plugin to use instead of outputting the default HTML. The plugins adds additional behaviour to the basic HTML such as adding or removing items and more. The default plugins for FictionBoard are:
+
+- list
+- listMultivalue
+- check
+
+### Plugins
+#### List
+
+Takes a regular list or a text with one level of headings an adds these behaviours:
+
+- add
+- remove
+- use
+
+The `type` property of list will determine the types of use allowed.
+
+Editing the markdown text directly will still have the same effect.
+
+#### ListMultivalue
+
+Takes a list with keyword pairs or text with one level of headings and a set of keyword pairs and adds these behaviours:
+
+- add
+- remove
+- use
+
+The `type` property of list will determine the types of use allowed.
+
+Editing the markdown text directly will still have the same effect.
+
+**Examples**
+
+- `Name: Two handed sword`, `Damage: +3`, `Range: Melee` , `Bonus: 0`
+
+##### Two handed sword
+
+`Damage: +3`
+
+`Range: Melee`
+
+`Bonus: 0`
+
+
+#### check
+
+Turns a keyword pair with an upper level and current value into a set of checkboxes with behaviour connected to:
+
+- add
+- remove
+- use
+
+**Example**
+##### Conditions
+
+`Exhausted: 0/1`
+
+`Battered: 0/1`
+
+`Wounded: 0/1`
+
+`Broken: 0/1`
+
+##### Experience
+
+`Experience: 3 (10)`
+
+
 ### Example text
 
 ```Markdown
