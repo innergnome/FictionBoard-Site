@@ -24,7 +24,7 @@ A short text derrived from a document or created on the fly. Plot- and game enti
 
 Movie, image or sound.
 
-## VTT related modules
+## VTT modules
 
 ### Game system
 
@@ -47,6 +47,8 @@ Movie, image or sound.
 ### Template
 
 ### Rule
+
+### Macro
 
 ## VTT dependent modules
 
@@ -82,7 +84,35 @@ Renders the relations between a specific type of game entities from a chunk, doc
 
 Used in the above objects in various sizes.
 
+## Render modules
 
+These modules will render and add functionality to VTT modules. They should be specified as plugins in the definition for how a VTT module shall render within a specific game system.
+### list-multivalue
+
+Allows the user to add or remove an item
+
+### list
+
+### check
+
+Will create a list of checkboxes from a number in a key-value pair such as 3/10 or 3(10).
+Will add one or more checkbox to a key-value pair that contains a (0/3).
+May include the helper "use" or similar.
+
+## Helper modules
+
+These modules add functionality
+
+### roll
+
+Allows the user to make a roll using one of the values
+
+### use
+
+Allows the user to use an weapon, ability or similar to gain a modiification
+
+
+### image
 ## Game entities
 
 ### Actor
@@ -104,4 +134,12 @@ Any static or abstract object an actor can interact with.
 ### Location
 
 ### Setting
+
+
+## Plugins
+
+Can be added to an object definition to add renderers (which may include built in actions)
+## Actions
+
+Can be added to an object definition to allow triggering of actions and macros
 

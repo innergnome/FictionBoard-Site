@@ -197,5 +197,6 @@ Font loading in FictionBoard is done with preloading so just referencing to them
 - Counters
 - Card decks
 - Tokens
+- Timeline
 
 > TODO: Write documentation for each object type and the generic classes provided. 
