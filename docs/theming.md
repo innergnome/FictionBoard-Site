@@ -198,20 +198,26 @@ one who did tis. Tomorow, I’l find a way home.</p>
 
 FictionBoard loads only enough CSS and HTML to show a specific variant of an object so split diffferent object types into separate CSS files for best performance.
 
+Documentation should be in the root folder. The `readme.md` will on deployed be renamed to the theme name and moved up one level.
+
 ### Generic themes
 
 The allowed {type} are the generic types.
 
 ```
 \generic-themes
+  noir.md
   \theme-noir
-    colors.css
-    slide.css
-    actor.css
-    actor-{type}.css
-    handout.css
-    handout-{type}.css
-    doc.css
+    {name-of-document}.md
+    {name-of-other-document}.md
+    \css
+      colors.css
+      slide.css
+      actor.css
+      actor-{type}.css
+      handout.css
+      handout-{type}.css
+      doc.css
     \assets
       logo.svg
       \fonts
@@ -225,10 +231,13 @@ The allowed {type} are the generic types AND the system specific types.
 ```
 \system-themes
   \theme-{system-shortname}
-    color.css
-    slide.css
-    actor.css
-    ...
+    {name-of-document}.md
+    {name-of-other-document}.md
+    \css
+      color.css
+      slide.css
+      actor.css
+      ...
   \system-{system-shortname}
 ```
 
@@ -239,9 +248,12 @@ The allowed {type} are the generic types AND the system specific types.
 ```
 \custom-themes
   \theme-{name-of-your-choice}
-    color.css
-    slide.css
-    actor.css
+    {name-of-document}.md
+    {name-of-other-document}.md
+    \css
+      color.css
+      slide.css
+      actor.css
     ...
 ```
 
