@@ -1,7 +1,11 @@
-# Transformation
+# Transformation and templating
 
-Transformations are used a lot in FictionBoard to achieve various renderings
+Transformations are used a lot in FictionBoard to achieve various renderings.
 
+
+## Replace variables
+
+{key} or {object.key} will let you replace values from the YAML frontmatter. The values are expected to live within the ´data´ object.
 ## Key-value pairs
 
 If a key-value pair is to be rendered, for instance in a character sheet, it is transformed into **key:** value. 
