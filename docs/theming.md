@@ -207,7 +207,9 @@ Documentation should be in the root folder. The `readme.md` will on deployed be 
 ### Generic themes
 
 The allowed {type} are the generic object types.
+
 The allowed {rendertype} contains a subset of {type} together with computed content and additional behaviour.
+
 The allowed {variant} expresses variuos modes or states of an object
 
 
