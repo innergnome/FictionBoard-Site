@@ -6,20 +6,24 @@ FictionBoard allows for custom theming of handouts, slide decks, actor sheets an
 Theming is highly encouraged to create an immersive experience relevant to your story. Themes can be generic and preferably genre oriented, game system specific or you can roll your own. The default theme for a system is usually maintained by someone appointed by the game system publisher.
 ## How styling works in FictionBoard
 
-By default, the look and feel of objects is retrieved from the game system. If the game system does not have any specific styling, genre styling is proposed. On game level you can choose to override genre or game specific styling with another theme. You can also at any time choose a different style for a object. 
+By default, the look and feel of objects is retrieved from the game system which either has its own theme or uses a generic theme. On a game level you can choose to override genre or game specific styling with another theme. For objects you may allow several different stylings, this will be part of the object metadata.
 ## Basic concepts for HTML in FictionBoard
 
 The HTML of objects in FictionBoard is purposly kept quite simple to improve accessibility and make them possible to express in written text.
 
 A more complex object such as an actor sheet is written as a set of headers, list, key value pairs, text and links. To create a rendering of the object, FictionBoard splits texts into chunks. A chunk is represented by a div with class derived from object type and the header from which the chunk is created. The chunks are contained within a div with class according to type and theme.
 
-The chunk rendering can be overridden by defining a plugin to use instead of outputting the default HTML. The plugins adds additional behaviour to the basic HTML such as adding or removing items and more. The default plugins for FictionBoard are:
+The chunk rendering can be overridden by defining a plugin to use instead of outputting the default HTML. The plugins adds additional behaviour to the basic HTML such as adding or removing items and more. 
+
+The default plugins for FictionBoard are:
 
 - list
 - listMultivalue
 - check
 
 ### Plugins
+
+Plugins replaces standard rendering and interact with the data object. The plugin may contain more specific HTML and allow very specific styling.
 #### List
 
 Takes a regular list or a text with one level of headings an adds these behaviours:
@@ -202,15 +206,22 @@ Documentation should be in the root folder. The `readme.md` will on deployed be 
 
 ### Generic themes
 
-The allowed {type} are the generic types.
-The allowed {} is an entity of 
+The allowed {type} are the generic object types.
+The allowed {rendertype} contains a subset of {type} together with computed content and additional behaviour.
+The allowed {variant} expresses variuos modes or states of an object
+
 
 ```
 \generic-themes
   noir.md
   \theme-noir
+    {type}.md
+    {type}-{rendertype}.md
+    {type}-{rendertype}-{variant}.md
+    actor.md
     actor-sheet.md
-    actor-sheet-with-actions.md
+    actor-token.md
+    actor-token-large.md
     \css
       colors.css
       slide.css
