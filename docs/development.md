@@ -18,7 +18,7 @@ https://github.com/innergnome/FictionBoard
 FictionBoard is built on an arhitecture utilizing [Sveltes](https://github.com/sveltejs/svelte) serverless capabilities together with [PouchDbs](https://github.com/pouchdb/pouchdb) offline capabilities.
 ### Parsing and transformation
 
-FictionBoard use [Marked](https://github.com/markedjs/marked) with home built extensions to support our Markdown extension [RPG Markdown](https://github.com/innergnome/rpg-markdown). Default values for a markdown document is set as YAML in the Frontmatter.
+For most content and input FictionBoard use [Marked](https://github.com/markedjs/marked) with home built extensions to support our Markdown extension [RPG Markdown](https://github.com/innergnome/rpg-markdown). Default values for a markdown document is set as YAML in the Frontmatter.
 
 - `title` The name of the page
 - `slug` The URL friendly version of the title
@@ -30,6 +30,15 @@ FictionBoard use [Marked](https://github.com/markedjs/marked) with home built ex
 - `template.effects` List of default template effects. A `\_effect: value` in a chunk _adds_ an effect to the chunk. Allowed effects are defined by template properties.
 
 <!-- TODO: Write about `template.actions` -->
+
+#### On the roadmap for parsing
+
+- Move parsing from Marked to the Unified Collective chain of parsing
+- Second level chat parsing with (RiveScript)[https://www.rivescript.com/]
+
+#### Investigate further
+
+Instead of or in addition to regex [PegJS](https://pegjs.org/documentation)
 
 #### Template YAML
 
@@ -96,6 +105,18 @@ Svelte is really awesome att SVG transformation so a lot of the graphical part o
 ### Security
 
 The security features in CouchDb are sufficient for many of the FictionBoard use cases and handles most authorization cases. We'll come back authentication in a later relase.
+
+### Editor
+
+- Run as single line (or few lines) as well as full screen
+- Integrate well with parser based on some sort of AST (To allow preview as deck, handout etc)
+- Support extensive typeahead with different triggers
+- Strict mode - Should not produce any spans with custom classes
+- 1:1 Markdown syntax and WYSIWIG
+- Plugin architecture so I can support inline components
+- (Zen mode and toolbar less)
+- Work with Svelte
+
 
 
 

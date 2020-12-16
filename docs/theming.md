@@ -203,13 +203,14 @@ Documentation should be in the root folder. The `readme.md` will on deployed be 
 ### Generic themes
 
 The allowed {type} are the generic types.
+The allowed {} is an entity of 
 
 ```
 \generic-themes
   noir.md
   \theme-noir
-    {name-of-document}.md
-    {name-of-other-document}.md
+    actor-sheet.md
+    actor-sheet-with-actions.md
     \css
       colors.css
       slide.css
@@ -235,8 +236,8 @@ The allowed {type} are the generic types AND the system specific types.
     {name-of-other-document}.md
     \css
       color.css
-      slide.css
-      actor.css
+      {name-of-document}.css
+      {name-of-other-document}.css
       ...
   \system-{system-shortname}
 ```
