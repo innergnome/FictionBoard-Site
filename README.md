@@ -1,4 +1,4 @@
-# FictionBoard
+# FictionBoard Site
 
 FictionBoard is a virtual tabletop and collaborative storytelling platform. It's in a very early phase of development. 
 
