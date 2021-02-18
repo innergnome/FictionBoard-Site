@@ -68,13 +68,13 @@ Renders a chunk or a document into a slide deck.
 
 Renders a chunk or a document into one or more handouts
 
-### Tome
+### Pages
 
 Renders on or more documents into a searchable tome
 
-### Character sheet
+### Sheet
 
-Renders a chunk or a document into a character sheet
+Renders a chunk or a document into a sheet for an actor or other entity
 
 ### Relations
 
@@ -84,10 +84,10 @@ Renders the relations between a specific type of game entities from a chunk, doc
 
 Used in the above objects in various sizes.
 
-<<<<<<< HEAD
 ## Render modules
 
 These modules will render and add functionality to VTT modules. They should be specified as plugins in the definition for how a VTT module shall render within a specific game system.
+
 ### list-multivalue
 
 Allows the user to add or remove an item
@@ -103,11 +103,10 @@ May include the helper "use" or similar.
 ## Helper modules
 
 These modules add functionality
-=======
+
 ### Timeline
 
 Renders a timeline for a list of events
->>>>>>> 3e656dea70d520c65544c51c2e413c357bca7a86
 
 ### roll
 
@@ -119,6 +118,7 @@ Allows the user to use an weapon, ability or similar to gain a modiification
 
 
 ### image
+
 ## Game entities
 
 ### Actor
@@ -131,7 +131,7 @@ Any static or abstract object an actor can interact with.
 
 ### Container
 
-### Vehicle/
+### Vehicle
 
 ### Universe
 
